@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Lista tarefas</title>
 </head>
 <body>
 
 
-	<a href="novaTarefa">Criar nova tarefa</a>
+	
 
 	<br />
 	<br />
@@ -25,7 +25,7 @@
 			<th>Data de Finalização</th>
 		</tr>
 
-		<c:forEach items="$(tarefas)" var="tarefa">
+		<c:forEach items="${tarefas}" var="tarefa">
 
 			<tr>
 				<td>${tarefa.id}</td>
@@ -44,6 +44,7 @@
 
 				<td><fmt:formatDate value="${tarefa.dataFinalizacao.time}"
 						pattern="dd/MM/yyy" /></td>
+				<td><a href="removeTarefa?id=${tarefa.id}">Remover</a></td>						
 			</tr>
 
 		</c:forEach>

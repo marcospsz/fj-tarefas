@@ -12,7 +12,7 @@ import br.com.caelum.tarefas.modelo.Tarefa;
 
 @Controller
 public class TarefasController {
-
+	
 	@RequestMapping("novaTarefa")
 	public String form() {
 
@@ -32,7 +32,7 @@ public class TarefasController {
 
 	}
 	
-	@RequestMapping("listaTarefa")
+	@RequestMapping("listaTarefas")
 	public String lista(Model model) {
 		
 
@@ -42,5 +42,13 @@ public class TarefasController {
 
 	}
 	
+	@RequestMapping("removeTarefa")
+	public String remove(Tarefa tarefa) {
+		
+		JdbcTarefaDao dao = new JdbcTarefaDao();
+		dao.remove(tarefa);
+		return "redirect:listaTarefas";
+
+	}	
 	
 }	

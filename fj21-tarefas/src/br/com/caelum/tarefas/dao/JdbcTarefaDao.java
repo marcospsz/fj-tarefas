@@ -35,8 +35,8 @@ public class JdbcTarefaDao {
 		}
 	}
 
-	public void remove(Tarefa tarefa) {
-
+	public void remove(Tarefa tarefa) {		
+						
 		if (tarefa.getId() == null) {
 			throw new IllegalStateException("Id da tarefa não deve ser nula.");
 		}
